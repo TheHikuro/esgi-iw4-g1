@@ -1,0 +1,25 @@
+image:
+
+stages:
+  - build
+  - test
+  - deploy
+
+job:build:
+  stage: build
+  script:
+    - echo ""
+    - 
+job:test:
+  stage: test
+  script:
+    - echo ""
+    -
+job:deploy:
+  stage: deploy
+  image:
+  script: 
+    - echo ""
+    -
+only:
+  - master
