@@ -16,3 +16,5 @@ deploy:
   - apt-get install -y ruby
   - gem install dpl
   - dpl --provider=heroku --app=esgi-iw4-gp1 --api-key=1866da1a-3db0-4b64-a662-bb20e46bc06c
+only:
+ -main
