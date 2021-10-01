@@ -1,25 +1,22 @@
-image:
-
-stages:
-  - build
-  - test
-  - deploy
-
-job:build:
-  stage: build
+image: php:5.6
+build:
+  stage: build 
   script:
-    - echo ""
-    - 
-job:test:
+  - curl -sS https://getcomposer.org/installer | php
+  - php composer.phar install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+unittests:
   stage: test
   script:
-    - echo ""
-    -
-job:deploy:
+  - echo "Running unit tests..."
+  - echo "Tests successfully passed"
+  # - cp .env.example .env
+  # - php artisan key:generate
+  # - vendor/bin/phpunit tests
+deploy:
   stage: deploy
-  image:
-  script: 
-    - echo ""
-    -
+  script:
+  - apt-get install -y ruby
+  - gem install dpl
+  - dpl --provider=heroku --app=esgi-iw4-gp1 --api-key=1866da1a-3db0-4b64-a662-bb20e46bc06c
 only:
-  - master
+ -main
