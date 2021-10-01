@@ -31,5 +31,10 @@
         ]
     },
     "minimum-stability": "dev",
+    "config": {
+        "platform": {
+            "php": "5.6.40"
+        }
+    },
     "prefer-stable": true
 }
